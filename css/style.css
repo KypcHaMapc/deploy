@@ -1121,6 +1121,11 @@ h1, h2, h3, h4 {
         line-height: 1.5;
     }
 
+    /* Center the "About system" block text on mobile */
+    .bento-content.text-center div[style*="text-align: left"] {
+        text-align: center;
+    }
+
     .tech-callout {
         position: static;
         width: 100%;
