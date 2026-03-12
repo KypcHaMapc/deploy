@@ -371,6 +371,13 @@ h4 {
 .card-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.text-center .card-icon {
+    justify-content: center;
 }
 
 .feature-list {
