@@ -286,6 +286,13 @@ h4 {
 }
 
 /* Bento Specific Card Styles */
+.hero-card-custom {
+    background-image: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%), url('../images/cafe-hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .bento-hero {
     justify-content: center;
 }
