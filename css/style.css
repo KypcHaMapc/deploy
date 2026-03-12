@@ -171,15 +171,17 @@ h1, h2, h3, h4 {
     padding: 60px;
     position: relative;
     overflow: hidden;
-    transition: var(--transition);
+    /* Only transform is GPU-accelerated — no background/border in transition */
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
     display: flex;
     flex-direction: column;
+    contain: layout style;
 }
 
 .bento-card:hover {
-    border-color: rgba(255, 255, 255, 0.1);
-    background: var(--surface-light);
     transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
 .bento-span-1 {
@@ -643,16 +645,20 @@ h1, h2, h3, h4 {
     border-radius: 12px;
 }
 
-/* Animations (Scroll) */
+/* Animations (Scroll) — GPU only: opacity + transform */
 .fade-in {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+    will-change: auto; /* Release after animation */
 }
 
 .delay-1 {
