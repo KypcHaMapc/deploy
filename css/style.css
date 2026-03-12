@@ -284,6 +284,43 @@ h1, h2, h3, h4 {
     flex-wrap: wrap;
 }
 
+/* About System Block */
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-subtitle {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.about-inner-block {
+    background: rgba(255,255,255,0.02);
+    padding: 3rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.05);
+    text-align: left;
+}
+
+.about-inner-title {
+    margin-bottom: 1rem;
+}
+
+.about-inner-text {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
 /* Bento Image Card */
 .bento-image {
     padding: 0;
@@ -1121,9 +1158,30 @@ h1, h2, h3, h4 {
         line-height: 1.5;
     }
 
-    /* Center the "About system" block text on mobile */
-    .bento-content.text-center div[style*="text-align: left"] {
+    /* About System Block — mobile centering and full-width fix */
+    .about-content {
+        max-width: 100%;
         text-align: center;
+    }
+
+    .about-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .about-subtitle {
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-inner-block {
+        text-align: center;
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+
+    .about-inner-text {
+        font-size: 1rem;
     }
 
     .tech-callout {
