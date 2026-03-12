@@ -214,6 +214,9 @@ h1, h2, h3, h4 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    min-height: 700px;
+    padding: 6rem 4rem;
+    justify-content: flex-end;
 }
 
 .bento-hero {
@@ -1093,16 +1096,29 @@ h1, h2, h3, h4 {
 
     .hero-title,
     .section-title {
-        font-size: 2rem;
-        line-height: 1.25;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
+        font-size: 2.5rem;
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+    }
+
+    .hero-card-custom {
+        min-height: 500px;
+        padding: 40px 24px;
+        background-image: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%), url('../images/cafe-hero-bg.jpg');
+    }
+
+    .hero-features-list {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .hero-features-list li {
+        font-size: 1.05rem;
     }
 
     .card-text {
-        font-size: 1.15rem;
-        line-height: 1.6;
+        font-size: 1.05rem;
+        line-height: 1.5;
     }
 
     .tech-callout {
