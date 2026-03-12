@@ -307,10 +307,11 @@ h4 {
 
 .hero-title,
 .section-title {
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 1.5rem;
     letter-spacing: -1px;
     line-height: 1.1;
+    word-wrap: break-word;
 }
 
 .hero-description {
@@ -1154,12 +1155,15 @@ h4 {
 
     .hero-title,
     .section-title {
-        font-size: 2.4rem;
+        font-size: 2rem;
         line-height: 1.25;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     .card-text {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         line-height: 1.6;
     }
 
