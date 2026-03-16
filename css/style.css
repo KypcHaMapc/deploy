@@ -862,22 +862,50 @@ h1, h2, h3, h4 {
 
 @media (max-width: 900px) {
     .process-steps {
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem 2rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
     }
 
-    .step:nth-child(2)::before {
-        display: none;
+    .step {
+        padding-top: 3.5rem;
+        text-align: center;
+    }
+
+    .step::before {
+        left: 50%;
+        width: 100%;
+        top: 25px;
+    }
+
+    .step-num {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
 @media (max-width: 600px) {
     .process-steps {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.5rem;
+    }
+
+    .step {
+        padding-top: 2.8rem;
     }
 
     .step::before {
-        display: none;
+        top: 15px;
+    }
+
+    .step-num {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
+
+    .step h4 {
+        font-size: 0.7rem;
+        line-height: 1.1;
     }
 }
 
@@ -1298,14 +1326,6 @@ h1, h2, h3, h4 {
 
     .cta-form {
         flex-direction: column;
-    }
-
-    .process-steps {
-        grid-template-columns: 1fr;
-    }
-
-    .step::before {
-        display: none;
     }
 
     .form-input {
