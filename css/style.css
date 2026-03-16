@@ -42,9 +42,14 @@ body {
 
 /* Typography */
 h1, h2, h3, h4 {
-    line-height: 1.05;
+    line-height: 1.1;
     font-weight: 800;
     letter-spacing: -0.04em;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+h1, h2 {
+    color: var(--text-primary);
 }
 
 .highlight {
@@ -171,7 +176,6 @@ h1, h2, h3, h4 {
     padding: 60px;
     position: relative;
     overflow: hidden;
-    /* Only transform is GPU-accelerated — no background/border in transition */
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform;
     display: flex;
@@ -232,16 +236,16 @@ h1, h2, h3, h4 {
 
 .badge {
     display: inline-block;
-    padding: 0.5rem 1.2rem;
-    background: rgba(93, 126, 158, 0.15);
+    padding: 0.6rem 1.4rem;
+    background: rgba(97, 179, 189, 0.1);
     color: var(--accent-color);
-    border: 1px solid rgba(93, 126, 158, 0.3);
-    border-radius: 20px;
-    font-size: 0.85rem;
+    border: 1px solid rgba(97, 179, 189, 0.3);
+    border-radius: 100px;
+    font-size: 0.8rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     align-self: flex-start;
 }
 
@@ -254,17 +258,29 @@ h1, h2, h3, h4 {
     word-wrap: break-word;
 }
 
+.hero-features-container {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 1.5rem 2rem;
+    display: inline-block;
+    margin-top: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
 .hero-features-list {
     list-style: none;
     padding: 0;
-    margin-top: 2rem;
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
 }
 
 .hero-features-list li {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 3.5vw, 1.6rem);
     font-weight: 500;
     color: var(--text-secondary);
     display: flex;
@@ -324,8 +340,8 @@ h1, h2, h3, h4 {
 
 .about-inner-text {
     color: var(--text-secondary);
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: clamp(1rem, 3vw, 1.45rem);
+    line-height: 1.6;
 }
 
 /* Bento Image Card */
@@ -365,7 +381,7 @@ h1, h2, h3, h4 {
 
 .card-text {
     color: var(--text-secondary);
-    font-size: 1.05rem;
+    font-size: clamp(1rem, 2.8vw, 1.35rem);
     font-weight: 500;
 }
 
@@ -566,7 +582,7 @@ h1, h2, h3, h4 {
 }
 
 .icon-turquoise {
-    color: #61b3bd !important;
+    color: var(--accent-color) !important;
 }
 
 .btn-primary {
@@ -857,7 +873,7 @@ h1, h2, h3, h4 {
 
 .step p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 2.5vw, 1.2rem);
 }
 
 @media (max-width: 900px) {
@@ -906,6 +922,33 @@ h1, h2, h3, h4 {
     .step h4 {
         font-size: 0.7rem;
         line-height: 1.1;
+    }
+}
+
+@media (max-width: 400px) {
+    .process-steps {
+        gap: 0.2rem;
+    }
+
+    .step {
+        padding-top: 2.2rem;
+    }
+
+    .step-num {
+        width: 26px;
+        height: 26px;
+        font-size: 0.75rem;
+    }
+
+    .step h4 {
+        font-size: 0.6rem;
+        word-break: break-word;
+        hyphens: auto;
+        padding: 0 2px;
+    }
+
+    .step::before {
+        top: 13px;
     }
 }
 
@@ -1044,7 +1087,7 @@ h1, h2, h3, h4 {
 }
 
 .tab-text p {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 3vw, 1.4rem);
     color: var(--text-secondary);
 }
 
@@ -1106,7 +1149,7 @@ h1, h2, h3, h4 {
 }
 
 .tech-callout p {
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 2.5vw, 1.15rem);
     color: var(--text-secondary);
     line-height: 1.5;
 }
@@ -1200,9 +1243,15 @@ h1, h2, h3, h4 {
         background-image: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%), url('../images/cafe-hero-bg.jpg');
     }
 
-    .hero-features-list {
-        gap: 1rem;
+    .hero-features-container {
+        padding: 1.25rem 1.5rem;
         margin-top: 1.5rem;
+        width: 100%;
+        display: block;
+    }
+
+    .hero-features-list {
+        gap: 1.2rem;
     }
 
     .hero-features-list li {
